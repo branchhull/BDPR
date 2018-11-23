@@ -17,7 +17,7 @@ C = randn(L,N);
 C = C/sqrt(L);
 
 ms = [ones(round(N/2),1);-ones(N-round(N/2),1)];
-hs = [ones(round(K/2),1);-ones(K-round(K/2),1)];
+hs = ones(K,1);
 
 MatA1 = fft(C);
 MatA2 = fft(B);
