@@ -46,7 +46,7 @@ pCoef = [ones(L,1), -z1, zeros(L,1), del.*z2, -del.^2];
 
 % lopping to find the projections one after the other
 
-for i = 51 : L
+for i = 1 : L
     % skipping the points with trivial projection (projection of the points
     % that are already in the set is trivial)
     if (inSet(i)>0)
