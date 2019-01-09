@@ -19,7 +19,7 @@ The latest BDPR code uses the [**minFunc**](https://www.cs.ubc.ca/~schmidtm/Soft
 * open *BDPR (Latest Version 2019)* in Matlab and run *Setup_BDPR_minFunc.m* (please make sure that mex is working properly on your Matlab for flawless compilation of the minFunc .C files)
 * now you are ready to run the BDPR demo file
 
-The file *Setup_BDPR_minFunc.m* contains a sequence of simple commands to unzip the downloaded folder, compile it and add it to the path. The user can easily apply those steps manually
+The file *Setup_BDPR_minFunc.m* contains a sequence of simple commands to unzip the downloaded folder, compile it and add it to the path. The user can easily apply those steps manually.
 
 
 
