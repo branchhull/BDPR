@@ -1,5 +1,3 @@
-# BDPR
-
 # Blind Deconvolutional Phase Retrieval (BDPR)
 This page contains the different versions of BDPR. The first version was presented at NeurIPS 2018 by Ahmed, Aghasi and Hand:
 
