@@ -103,10 +103,9 @@ if isfield(options,'ADMM')
     end
     %
     if isfield(options.ADMM,'ncvxMaxRankCoef')
-        if(options.ADMM.ncvxMaxRankCoef > 2)
-            ncvxMaxRankCoef = options.ADMM.ncvxMaxRankCoef;
-        else
-            warnining('No guarantee for global convergence: value of ncvxMaxRankCoef should be strictly greater than 2!')
+        ncvxMaxRankCoef = options.ADMM.ncvxMaxRankCoef;
+        if(options.ADMM.ncvxMaxRankCoef <= 2)
+            warning('No guarantee for global convergence: value of ncvxMaxRankCoef should be strictly greater than 2!')
         end
     end
     %
@@ -180,7 +179,7 @@ for i = 1 : maxIter
     aaX1 = sum(abs(MatA1*V1).^2,2);
     aaX2 = sum(abs(MatA2*V2).^2,2);
     
-   
+    
     
     [u1, u2] = projC(aaX1-alpha1, aaX2-alpha2, delta);
     
