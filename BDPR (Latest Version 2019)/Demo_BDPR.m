@@ -31,8 +31,8 @@ options.ADMM.iterShowFreq = 5;
 options.ADMM.convergeTol = 2e-4;
 % =========================================================================
 % If you want the program to run faster you can set options.ADMM.ncvxMaxRankCoef
-% to values below 2 (e.g., uncomment the line below ), however, there is no
-% theoretical guarantees for convergence
+% to values below 2 (e.g., uncomment the line below), however, there is no
+% theoretical guarantee for convergence
 % =========================================================================
 % options.ADMM.ncvxMaxRankCoef = .1;
 
