@@ -3,7 +3,7 @@ This page contains the different versions of BDPR. The first version was present
 
 * [**Link to NeurIPS paper**](http://papers.nips.cc/paper/8207-blind-deconvolutional-phase-retrieval-via-convex-programming)
 
-The Matlab code for the first version is available in *BDPR BDPR (First Version 2018)*
+The Matlab code for the first version is available in *BDPR (First Version 2018)*
 
 # Faster Matlab Code (Latest Version) and Installation Guide
 Later in 2019, the authors presented a new algorithm which uses a low rank factorization and speeds up the solution to the BDPR semidefinite program. The new paper which includes the new algorithm and the stability analysis is available at:
