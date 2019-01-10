@@ -30,9 +30,9 @@ function [X1, X2] = BDPR_ADMM(MatA1, MatA2, delta, options)
 %    minimizer we should have r > sqrt(c*m) where c > 2. This parameter
 %    represents the factor c (default = 2.5)
 %
-% *- options.ADMM.convergeTol: Once the change in the "u variable" reaches
+% *- options.ADMM.convergeTol: Once the change in the dual variable reaches
 %    this limit, the ADMM scheme is considered converged and the iterates
-%    stop (default = 1e-3)
+%    stop (default = 5e-4)
 %
 % *- options.ADMM.iterShowFreq: Every few iterations, program can report
 %    the current number of ADMM iterations completed (default = 10)
@@ -81,7 +81,7 @@ rho = 1e-4;
 maxIter = 300;
 plotFreq = inf;
 ncvxMaxRankCoef = 2.5;
-convergeTol = 1e-3;
+convergeTol = 5e-4;
 iterShowFreq = 10;
 
 
@@ -106,7 +106,7 @@ if isfield(options,'ADMM')
         if(options.ADMM.ncvxMaxRankCoef > 2)
             ncvxMaxRankCoef = options.ADMM.ncvxMaxRankCoef;
         else
-            error('value of ncvxMaxRankCoef should be strictly greater than 2!')
+            warnining('No guarantee for global convergence: value of ncvxMaxRankCoef should be strictly greater than 2!')
         end
     end
     %
@@ -180,12 +180,11 @@ for i = 1 : maxIter
     aaX1 = sum(abs(MatA1*V1).^2,2);
     aaX2 = sum(abs(MatA2*V2).^2,2);
     
-    u1old = u1;
-    u2old = u2;
+   
     
     [u1, u2] = projC(aaX1-alpha1, aaX2-alpha2, delta);
     
-    if (norm((u1old-u1)/m) + norm((u2old-u2)/m)) < convergeTol
+    if norm(u1 - aaX1)/m + norm(u2 - aaX2)/m < convergeTol
         break;
     end
     
