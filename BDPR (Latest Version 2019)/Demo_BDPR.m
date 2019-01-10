@@ -29,6 +29,13 @@ options.ADMM.maxIter = 100;
 options.ADMM.plotFreq = 10;
 options.ADMM.iterShowFreq = 5;
 options.ADMM.convergeTol = 2e-4;
+% =========================================================================
+% If you want the program to run faster you can set options.ADMM.ncvxMaxRankCoef
+% to values below 2 (e.g., uncomment the line below ), however, there is no
+% theoretical guarantees for convergence
+% =========================================================================
+% options.ADMM.ncvxMaxRankCoef = .1;
+
 options.minFunc.maxFunEvals = 50;
 
 tic;
