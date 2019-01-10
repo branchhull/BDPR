@@ -2,7 +2,7 @@
 % toolbox, which will be used by the BDPR ADMM scheme
 
 % checking if the file "minFunc_2012.zip" has been downloaded 
-if ~isfile('minFunc_2012.zip')
+if ~exist(strcat(pwd,'/minFunc_2012.zip'),'file')
     error(strcat('Please download minFunc_2012.zip from https://www.cs.ubc'...
     ,'.ca/~schmidtm/Software/minFunc.html before running the setup'));
 end
